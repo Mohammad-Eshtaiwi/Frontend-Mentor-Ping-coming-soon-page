@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// font-family: 'Libre Franklin', sans-serif;
+/* basic reset */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* variables */
+:root {
+  --heading: 2.2rem;
+  --body-font-size: 1.5rem;
+
+  --primary-color: #512051;
+  --orange: #ef9546;
+  --purple: #512051;
+  --pink: #ee69a4;
+  --grey: #927b91;
+  --page-bg: #0a0c1c;
+  --card-bg: #1b1937;
+  --line-color: #2e405a;
+  --white: #ffffff;
+  --kind-of-white: #f7f2f7;
+  --lailake: #ab5cdb;
+}
+
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  min-height: 100vh;
+  background-image: url("./images/bg-pattern-top-mobile.svg");
+  background-repeat: no-repeat;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+}
+
+/* common */
+
+.flex {
+  display: flex;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.color--white {
+  color: #fff;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.show {
+  display: block !important;
+}
+
+/*  */
+
+main,
+footer {
+  width: 100%;
+  max-width: 63.7rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main {
+  h1 {
+    margin-top: 8rem;
+  }
+
+  h2 {
+    font-size: 4.8rem;
+    line-height: 6rem;
+    color: #969696;
+    margin-bottom: 1.6rem;
+
+    span {
+      color: #000;
+      font-weight: 700;
+    }
+  }
+
+  .subscribe {
+    color: #15202A;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 4rem;
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    margin-bottom: 9.4rem;
+
+    input,
+    button {
+      padding: 1.8rem 3rem;
+      border-radius: 28px;
+    }
+
+
+    .input-controller {
+      display: grid;
+      flex: 1;
+      gap: .6rem;
+
+      p.error {
+        text-align: left;
+        padding-left: 3rem;
+        color: #FF5466;
+        display: none;
+      }
+    }
+
+
+    input,
+    input:focus {
+      outline: #4C7BF3 1px solid;
+      border: 0;
+
+      &:focus {
+        outline: #4C7BF3 2px solid;
+      }
+
+      &.error,
+      &.error:focus {
+        outline-color: #FF5466;
+        color: #000;
+      }
+
+      font-size: 1.6rem;
+      color: #4C7BF3;
+
+      &::placeholder {
+        color: currentColor;
+        font-size: inherit;
+        font-weight: 300;
+      }
+    }
+
+    button {
+      flex: 1 1;
+      max-width: 200px;
+      background-color: #4C7BF3;
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 600;
+      box-shadow: 0px 5px 10px 2px rgba(76, 123, 243, 0.230414);
+      align-self: flex-start;
+    }
+  }
+}
+
+footer {
+  padding-block: 2rem;
+
+  .social {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+
+    li {
+      padding: .8rem 1.2rem;
+      border: 1px solid rgba(76, 123, 243, 0.15);
+      border-radius: 100rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      aspect-ratio: 1/1;
+
+      &:hover {
+        background-color: #4C7BF3;
+
+        svg {
+          fill: #fff;
+        }
+      }
+
+      svg {
+        width: 30px;
+        height: 30px;
+        // fill: #668b76;
+        fill: #4C7BF3;
+      }
+    }
+  }
+
+  .copyright {
+    color: #969696;
+  }
+}
+
+@media screen and (max-width:680px) {
+
+  main,
+  footer {
+    padding-inline: 5vw;
+  }
+
+
+  main {
+    margin-bottom: 3.2rem;
+
+    h2 {
+      font-size: 2.2rem;
+      line-height: 32px;
+    }
+
+    .subscribe {
+      font-size: 1.5rem;
+    }
+
+    form {
+      display: grid;
+
+      button {
+        max-width: unset;
+      }
+    }
+  }
+}
